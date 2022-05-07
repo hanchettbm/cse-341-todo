@@ -1,0 +1,71 @@
+// LOCALHOST 
+### Get all contacts
+GET http://localhost:3000/contacts
+
+### get contact by id
+GET http://localhost:3000/contacts/626db33f3198bb4ad47c65d6
+
+
+### create contact 
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Helen",
+  "lastName": "Burch",
+  "email": "burch.Helen@gmail.com",
+  "favoriteColor": "Red",
+  "birthday": "04/12/99" 
+}
+
+### Put contact
+PUT http://localhost:3000/contacts/626db4e83198bb4ad47c65da HTTP/1.1 
+content-type: application/json
+
+{
+  "firstName": "Marcus",
+  "lastName": "Gabrielson-Hunter",
+  "email": "MarkTest.Helen@gmail.com",
+  "favoriteColor": "Blue",
+  "birthday": "09/23/98" 
+}
+
+### Delete contact 
+DELETE http://localhost:3000/contacts/
+
+
+
+// HEROKU
+
+### Get all contacts
+GET https://cse341apibaden.herokuapp.com/contacts
+
+### get contact by id
+GET https://cse341apibaden.herokuapp.com/contacts/626db33f3198bb4ad47c65d6
+
+### create contact 
+POST https://cse341apibaden.herokuapp.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Helen",
+  "lastName": "Burch",
+  "email": "burch.Helen@gmail.com",
+  "favoriteColor": "Red",
+  "birthday": "04/12/99" 
+}
+
+### Put contact
+PUT https://cse341apibaden.herokuapp.com/contacts/626db4e83198bb4ad47c65da HTTP/1.1 
+content-type: application/json
+
+{
+  "firstName": "Marcus",
+  "lastName": "Gabrielson-Hunter",
+  "email": "MarkTest.Helen@gmail.com",
+  "favoriteColor": "Blue",
+  "birthday": "09/23/98" 
+}
+
+### Delete contact 
+DELETE https://cse341apibaden.herokuapp.com/contacts/
