@@ -58,7 +58,7 @@ const updateContact = async (req, res) => {
 
 const deleteContact = async (req, res) => {
     const contactId = new ObjectId(req.params.id);
-    const results = await connect.getCollection('contacts').remove({ _id: contactId }, true);
+    const results = await connect.getCollection('contacts').deleteOne({ _id: contactId }, true);
     console.log(results);
     if (results.deletedCount > 0) {
       res.status(204).send();

@@ -19,19 +19,19 @@ content-type: application/json
 }
 
 ### Put contact
-PUT http://localhost:3000/contacts/626db4e83198bb4ad47c65da HTTP/1.1 
+PUT http://localhost:3000/contacts/626db4e83198bb4ad47c65da HTTP/1.1
 content-type: application/json
 
 {
   "firstName": "Marcus",
-  "lastName": "Gabrielson-Hunter",
-  "email": "MarkTest.Helen@gmail.com",
-  "favoriteColor": "Blue",
+  "lastName": "Gabrielson",
+  "email": "Mark.marcus@gmail.com",
+  "favoriteColor": "Orange",
   "birthday": "09/23/98" 
 }
 
 ### Delete contact 
-DELETE http://localhost:3000/contacts/
+DELETE http://localhost:3000/contacts/6276ea5fef1ae3bfc244486e
 
 
 
@@ -68,4 +68,4 @@ content-type: application/json
 }
 
 ### Delete contact 
-DELETE https://cse341apibaden.herokuapp.com/contacts/
+DELETE https://cse341apibaden.herokuapp.com/contacts/6276cd9af8d26bc904ef0f52
