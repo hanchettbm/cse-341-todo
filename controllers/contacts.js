@@ -30,7 +30,7 @@ const createContact = async (req, res) => {
         favoriteColor: req.body.favoriteColor,
         birthday: req.body.birthday
     };
-    const response = await connect.getDb().db().collection('contacts').insertOne(contact);
+    const response = await connect.getCollection('contacts').insertOne(contact);
     if (response.acknowledged) {
         res.status(201).json(response);
     } else {
@@ -47,7 +47,7 @@ const updateContact = async (req, res) => {
       favoriteColor: req.body.favoriteColor,
       birthday: req.body.birthday
     };
-    const results = await connect.getDb().db().collection('contacts').replaceOne({ _id: contactId }, contact);
+    const results = await connect.getCollection('contacts').replaceOne({ _id: contactId }, contact);
     console.log(results);
     if (results.modifiedCount > 0) {
       res.status(204).send();
@@ -58,7 +58,7 @@ const updateContact = async (req, res) => {
 
 const deleteContact = async (req, res) => {
     const contactId = new ObjectId(req.params.id);
-    const results = await connect.getDb().db().collection('contacts').remove({ _id: contactId }, true);
+    const results = await connect.getCollection('contacts').remove({ _id: contactId }, true);
     console.log(results);
     if (results.deletedCount > 0) {
       res.status(204).send();
