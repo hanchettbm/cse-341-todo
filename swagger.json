@@ -5,7 +5,7 @@
     "description": "swagger",
     "version": "1.0.0"
   },
-  "host": "https://cse341apibaden.herokuapp.com/",
+  "host": "https://cse341apibaden.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "http"
