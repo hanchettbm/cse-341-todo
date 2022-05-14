@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'swagger',
   },
-  host: 'localhost:3000',
+  host: 'https://cse341apibaden.herokuapp.com/',
   schemes: ['http'],
 };
 
