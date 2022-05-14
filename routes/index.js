@@ -1,8 +1,6 @@
 const routes = require('express').Router();
 
-// routes.get('/', (req, res) => {
-//   res.send('Samantha Jarnagin');
-// });
+routes.use('/', require('./swagger'));
 
 routes.use('/', require('./home'));
 
