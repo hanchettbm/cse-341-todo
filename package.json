@@ -1,7 +1,7 @@
 {
-  "name": "cse341-node",
+  "name": "cse341-todo",
   "version": "1.0.0",
-  "description": "Code for my CSE341 class",
+  "description": "Code for my CSE341 class Personal Projecct",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hanchettbm/cse341-node.git"
+    "url": "git+https://github.com/hanchettbm/cse-341-todo.git"
   },
   "author": "Baden Hanchett",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hanchettbm/cse341-node/issues"
+    "url": "https://github.com/hanchettbm/cse-341-todo/issues"
   },
-  "homepage": "https://github.com/hanchettbm/cse341-node#readme",
+  "homepage": "https://github.com/hanchettbm/cse-341-todo#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.0",

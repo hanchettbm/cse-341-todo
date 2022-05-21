@@ -1,0 +1,65 @@
+[
+    {
+        "task": "Wash Dishes",
+        "location": "Kitchen",
+        "startTime": "8:30pm",
+        "startDate": "5/25/2022",
+        "who": "John",
+        "deadlineDate": "5/25/2022",
+        "deadlineTime": "9:00pm"
+    },
+    {
+        "task": "Pick Up Mail",
+        "location": "Post Office",
+        "startTime": "2:00pm",
+        "startDate": "7/23/22",
+        "who": "Marrtha",
+        "deadlineDate": "7/23/22",
+        "deadlineTime": "5:00pm"
+    },    
+    {
+        "task": "Pay Bills",
+        "location": "Office",
+        "startTime": "5:00pm",
+        "startDate": "4/24/22",
+        "who": "Brandon",
+        "deadlineDate": "4/30/22",
+        "deadlineTime": "9:00pm"
+    },    
+    {
+        "task": "Walk the dog",
+        "location": "Porter Park",
+        "startTime": "10:00am",
+        "startDate": "5/23/22",
+        "who": "Savanah",
+        "deadlineDate": "5/23/22",
+        "deadlineTime": "11:00am"
+    },  
+    {
+        "task": "Soccer Game",
+        "location": "Restone Park",
+        "startTime": "9:30am",
+        "startDate": "6/24/22",
+        "who": "Josh",
+        "deadlineDate": "6/24/22",
+        "deadlineTime": "10:30am"
+    },    
+    {
+        "task": "Mow the Lawn",
+        "location": "Yard",
+        "startTime": "1:30pm",
+        "startDate": "8/18/22",
+        "who": "John",
+        "deadlineDate": "8/18/22",
+        "deadlineTime": "3:30pm"
+    },    
+    {
+        "task": "Website Debugging",
+        "location": "Work",
+        "startTime": "8:00am",
+        "startDate": "5/20/22",
+        "who": "Baden",
+        "deadlineDate": "6/20/22",
+        "deadlineTime": "5:00pm"
+    }
+]

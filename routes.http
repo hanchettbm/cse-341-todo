@@ -1,70 +1,78 @@
 // LOCALHOST 
-### Get all contacts
-GET http://localhost:3000/contacts
+### Get all tasks
+GET http://localhost:3000/tasks
 
-### get contact by id
-GET http://localhost:3000/contacts/626db33f3198bb4ad47c65d6
+### get task by id
+GET http://localhost:3000/tasks/62882223328190b287b14755
 
 
-### create contact 
-POST http://localhost:3000/contacts HTTP/1.1
+### create task
+POST http://localhost:3000/tasks HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Helen",
-  "lastName": "Burch",
-  "email": "burch.Helen@gmail.com",
-  "favoriteColor": "Red",
-  "birthday": "04/12/99" 
+  "task":"Mop the Floor",
+  "location": "Dining Room",
+  "startTime": "4:45pm",
+  "startDate": "8/28/22",
+  "who": "Dan",
+  "deadlineDate": "8/28/22",
+  "deadlineTime": "5:30pm"
 }
 
-### Put contact
-PUT http://localhost:3000/contacts/626db4e83198bb4ad47c65da HTTP/1.1
+### Put task (edit)
+PUT http://localhost:3000/tasks/62882223328190b287b14750 HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Marcus",
-  "lastName": "Gabrielson",
-  "email": "Mark.marcus@gmail.com",
-  "favoriteColor": "Orange",
-  "birthday": "09/23/98" 
+  "task": "Pick Up Mail",
+  "location": "Post Office",
+  "startTime": "1:00pm",
+  "startDate": "7/22/22",
+  "who": "Marry",
+  "deadlineDate": "7/23/22",
+  "deadlineTime": "5:00pm"
 }
 
-### Delete contact 
-DELETE http://localhost:3000/contacts/6276ea5fef1ae3bfc244486e
+### Delete task
+DELETE http://localhost:3000/tasks/62882a6a3319020e178bc659
 
 
 
 // HEROKU
 
-### Get all contacts
-GET https://cse341apibaden.herokuapp.com/contacts
+### Get all tasks
+GET https://cse341apibaden.herokuapp.com/tasks
 
-### get contact by id
-GET https://cse341apibaden.herokuapp.com/contacts/626db33f3198bb4ad47c65d6
+### get task by id
+GET https://cse341apibaden.herokuapp.com/tasks/62882223328190b287b14751
 
-### create contact 
-POST https://cse341apibaden.herokuapp.com/contacts HTTP/1.1
+### create task
+POST https://cse341apibaden.herokuapp.com/tasks HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Helen",
-  "lastName": "Burch",
-  "email": "burch.Helen@gmail.com",
-  "favoriteColor": "Red",
-  "birthday": "04/12/99" 
+  "task":"Sweep the Floor",
+  "location": "Dining Room",
+  "startTime": "3:45pm",
+  "startDate": "8/28/22",
+  "who": "Baden",
+  "deadlineDate": "8/28/22",
+  "deadlineTime": "4:30pm"
 }
 
-### Put contact
-PUT https://cse341apibaden.herokuapp.com/contacts/626db4e83198bb4ad47c65da HTTP/1.1
+### Put task (edit)
+PUT https://cse341apibaden.herokuapp.com/contacts/62882223328190b287b14753 HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Marcus",
-  "lastName": "Gabrielson-Hunter",
-  "email": "MarkTest.Helen@gmail.com",
-  "favoriteColor": "Blue",
-  "birthday": "09/23/98" 
+  "task": "Soccer Game",
+  "location": "Porter Park",
+  "startTime": "8:30am",
+  "startDate": "6/24/22",
+  "who": "Brian",
+  "deadlineDate": "6/24/22",
+  "deadlineTime": "10:30am"
 }
 
 ### Delete contact 

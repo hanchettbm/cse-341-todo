@@ -4,6 +4,6 @@ routes.use('/', require('./swagger'));
 
 routes.use('/', require('./home'));
 
-routes.use('/contacts', require('./contacts'));
+routes.use('/tasks', require('./tasks'));
 
 module.exports = routes;

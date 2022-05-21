@@ -5,7 +5,7 @@
     "description": "swagger",
     "version": "1.0.0"
   },
-  "host": "cse341apibaden.herokuapp.com",
+  "host": "cse341apitodo.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -29,7 +29,7 @@
         }
       }
     },
-    "/contacts/": {
+    "/tasks/": {
       "get": {
         "description": "",
         "produces": [
@@ -54,19 +54,22 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "task": {
                   "example": "any"
                 },
-                "lastName": {
+                "location": {
                   "example": "any"
                 },
-                "email": {
+                "startDate": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "who": {
                   "example": "any"
                 },
-                "birthday": {
+                "deadlineDate": {
+                  "example": "any"
+                },
+                "deadlineTime": {
                   "example": "any"
                 }
               }
@@ -83,7 +86,7 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/tasks/{id}": {
       "get": {
         "description": "",
         "produces": [
@@ -121,19 +124,22 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "task": {
                   "example": "any"
                 },
-                "lastName": {
+                "location": {
                   "example": "any"
                 },
-                "email": {
+                "startDate": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "who": {
                   "example": "any"
                 },
-                "birthday": {
+                "deadlineDate": {
+                  "example": "any"
+                },
+                "deadlineTime": {
                   "example": "any"
                 }
               }
