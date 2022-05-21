@@ -56,7 +56,7 @@ const updateTask = async (req, res) => {
     const task = {
       task: req.body.task,
       location: req.body.location,
-      startTime: req.bodystartTime,
+      startTime: req.body.startTime,
       startDate: req.body.startDate,
       who: req.body.who,
       deadlineDate: req.body.deadlineDate,

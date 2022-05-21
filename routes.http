@@ -42,13 +42,13 @@ DELETE http://localhost:3000/tasks/62882a6a3319020e178bc659
 // HEROKU
 
 ### Get all tasks
-GET https://cse341apibaden.herokuapp.com/tasks
+GET https://cse341apitodo.herokuapp.com/tasks
 
 ### get task by id
-GET https://cse341apibaden.herokuapp.com/tasks/62882223328190b287b14751
+GET https://cse341apitodo.herokuapp.com/tasks/62882223328190b287b14751
 
 ### create task
-POST https://cse341apibaden.herokuapp.com/tasks HTTP/1.1
+POST https://cse341apitodo.herokuapp.com/tasks HTTP/1.1
 content-type: application/json
 
 {
@@ -62,7 +62,7 @@ content-type: application/json
 }
 
 ### Put task (edit)
-PUT https://cse341apibaden.herokuapp.com/contacts/62882223328190b287b14753 HTTP/1.1
+PUT https://cse341apitodo.herokuapp.com/tasks/62882223328190b287b14753 HTTP/1.1
 content-type: application/json
 
 {
@@ -76,4 +76,4 @@ content-type: application/json
 }
 
 ### Delete contact 
-DELETE https://cse341apibaden.herokuapp.com/contacts/6276eb51994a90cbd20d3cdb
+DELETE https://cse341apitodo.herokuapp.com/tasks/62882e4e92e3096f73da2500
