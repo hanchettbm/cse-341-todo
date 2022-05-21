@@ -60,6 +60,9 @@
                 "location": {
                   "example": "any"
                 },
+                "startTime": {
+                  "example": "any"
+                },
                 "startDate": {
                   "example": "any"
                 },
