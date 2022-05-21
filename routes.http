@@ -29,13 +29,13 @@ content-type: application/json
   "location": "Post Office",
   "startTime": "1:00pm",
   "startDate": "7/22/22",
-  "who": "Marry",
+  "who": "Jane",
   "deadlineDate": "7/23/22",
   "deadlineTime": "5:00pm"
 }
 
 ### Delete task
-DELETE http://localhost:3000/tasks/62882a6a3319020e178bc659
+DELETE http://localhost:3000/tasks/62882fb4d016cfd896054fe1
 
 
 
@@ -70,10 +70,10 @@ content-type: application/json
   "location": "Porter Park",
   "startTime": "8:30am",
   "startDate": "6/24/22",
-  "who": "Brian",
+  "who": "Joe",
   "deadlineDate": "6/24/22",
   "deadlineTime": "10:30am"
 }
 
 ### Delete contact 
-DELETE https://cse341apitodo.herokuapp.com/tasks/62882e4e92e3096f73da2500
+DELETE https://cse341apitodo.herokuapp.com/tasks/6288308a568b443a793a1b27

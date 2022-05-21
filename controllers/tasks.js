@@ -82,7 +82,7 @@ const deleteTask = async (req, res) => {
     if (results.deletedCount > 0) {
       res.status(204).send();
     } else {
-      res.status(500).json(results.error || 'An error occurred: Can not delete the contact.');
+      res.status(500).json(results.error || 'An error occurred: Can not delete the task.');
     }
   } catch (err) {
     res.status (500) .json(err);
