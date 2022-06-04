@@ -3,6 +3,11 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 const connect = require('./db/connect');
+const exphbs = require('express-handlebars');
+const passport = require('passport');
+const session = require('exporess-parsersession');
+
+require('./config/passport')(passport);
 
 connect.initDatabase();
 
@@ -19,6 +24,24 @@ app.use((req, res, next) => {
 });
 
 app.use('/', require('./routes'))
+
+// Handlebars
+app.engine('.hbs', exphbs.engine({defaultLayout: 'main' ,extname: '.hbs'}));
+app.set('view engine', '.hbs');
+
+// sessions
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true}
+}));
+
+// Passport 
+app.use(passport.initialize);
+app.use(passport.session());
+
+
 
 app.listen(port, () => {
     console.log(`Running on port ${port}`)
