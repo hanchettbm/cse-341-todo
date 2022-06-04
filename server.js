@@ -1,15 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+// const dotenv = require('dotenv');
 const port = process.env.PORT || 3000;
 const connect = require('./db/connect');
 const exphbs = require('express-handlebars');
 const passport = require('passport');
-const session = require('exporess-parsersession');
+const session = require('express-session');
 
+// dotenv.config( { path: './.env'});
 require('./config/passport')(passport);
 
+
 connect.initDatabase();
+
 
 app.use(bodyParser.json())
 
@@ -33,12 +37,11 @@ app.set('view engine', '.hbs');
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true}
+    saveUninitialized: false,
 }));
 
 // Passport 
-app.use(passport.initialize);
+app.use(passport.initialize());
 app.use(passport.session());
 
 
