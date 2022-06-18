@@ -6,6 +6,8 @@ routes.use('/', require('./home'));
 
 routes.use('/tasks', require('./todotasks'));
 
+routes.use('/tasksSwagger', require('./tasks'));
+
 routes.use('/user', require('./user'));
 
 routes.use('/auth', require('./auth'));
