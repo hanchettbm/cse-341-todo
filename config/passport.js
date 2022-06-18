@@ -1,14 +1,14 @@
 const GoogleStratagey = require('passport-google-oauth20').Strategy;
+const mongoose = require('mongoose');
 const User = require('../controllers/user');
 
 module.exports = function (passport) {
     passport.use(new GoogleStratagey({
-        clientID: '123600961674-qd0l5dgnhnoe627h3nva3ou88c3268ul.apps.googleusercontent.com',
-        clientSecret: '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',
-        callbackURL: 'http://localhost:3000/auth/google/callback' 
+        clientID: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL: 'https://cse341apitodo.herokuapp.com/auth/google/callback' 
     },
     async (accessToken, refreshToken, profile, done) => {
-        console.log(profile);
         const newUser = {
             googleId: profile.id,
             displayName: profile.displayName,
@@ -18,7 +18,7 @@ module.exports = function (passport) {
         }
 
         try {
-            let user = await User.findOne({ googleId: profile.id })
+            let user = await User.findOne({googleId: profile.id})
 
             if (user) {
                 done(null, user)
@@ -27,7 +27,7 @@ module.exports = function (passport) {
                 done(null, user);
             }
         } catch (err){
-            console.error(err);
+            console.error(`passport error: ${err.message}`);
         }
 
     }));
@@ -37,7 +37,7 @@ module.exports = function (passport) {
     })
 
     passport.deserializeUser( (id, done) => {
-        User.findBtid(id, (err, user) => done(err, user));
+        User.findById(id, (err, user) => done(err, user));
     })
 
 

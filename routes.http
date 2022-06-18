@@ -1,13 +1,13 @@
 // LOCALHOST 
 ### Get all tasks
-GET http://localhost:3000/tasks
+GET http://localhost:3000/tasksSwagger/get-all
 
 ### get task by id
-GET http://localhost:3000/tasks/62882223328190b287b14755
+GET http://localhost:3000//tasksSwagger/get-single/62ad6766d56f7b889ffefc6f
 
 
 ### create task
-POST http://localhost:3000/tasks HTTP/1.1
+POST http://localhost:3000/tasksSwagger/ceate HTTP/1.1
 content-type: application/json
 
 {
@@ -15,40 +15,38 @@ content-type: application/json
   "location": "Dining Room",
   "startTime": "4:45pm",
   "startDate": "8/28/22",
-  "who": "Dan",
   "deadlineDate": "8/28/22",
   "deadlineTime": "5:30pm"
 }
 
 ### Put task (edit)
-PUT http://localhost:3000/tasks/62882223328190b287b14750 HTTP/1.1
+PUT http://localhost:3000/tasksSwagger/edit/62ad691fd56f7b889ffefc94 HTTP/1.1
 content-type: application/json
 
 {
   "task": "Pick Up Mail",
   "location": "Post Office",
-  "startTime": "1:00pm",
+  "startTime": "2:00pm",
   "startDate": "7/22/22",
-  "who": "Jane",
   "deadlineDate": "7/23/22",
   "deadlineTime": "5:00pm"
 }
 
 ### Delete task
-DELETE http://localhost:3000/tasks/62882fb4d016cfd896054fe1
+DELETE http://localhost:3000/tasksSwagger/delete/62ad691fd56f7b889ffefc94
 
 
 
 // HEROKU
 
 ### Get all tasks
-GET https://cse341apitodo.herokuapp.com/tasks
+GET https://cse341apitodo.herokuapp.com/tasksSwagger/get-all
 
 ### get task by id
-GET https://cse341apitodo.herokuapp.com/tasks/62882223328190b287b14751
+GET https://cse341apitodo.herokuapp.com/get-single/62ad6766d56f7b889ffefc6f
 
 ### create task
-POST https://cse341apitodo.herokuapp.com/tasks HTTP/1.1
+POST https://cse341apitodo.herokuapp.com/tasksSwagger/ceate HTTP/1.1
 content-type: application/json
 
 {
@@ -56,13 +54,12 @@ content-type: application/json
   "location": "Dining Room",
   "startTime": "3:45pm",
   "startDate": "8/28/22",
-  "who": "Baden",
   "deadlineDate": "8/28/22",
   "deadlineTime": "4:30pm"
 }
 
 ### Put task (edit)
-PUT https://cse341apitodo.herokuapp.com/tasks/62882223328190b287b14753 HTTP/1.1
+PUT https://cse341apitodo.herokuapp.com/tasksSwagger/edit/62ad691fd56f7b889ffefc94 HTTP/1.1
 content-type: application/json
 
 {
@@ -75,5 +72,82 @@ content-type: application/json
   "deadlineTime": "10:30am"
 }
 
-### Delete contact 
-DELETE https://cse341apitodo.herokuapp.com/tasks/6288308a568b443a793a1b27
+### Delete task
+DELETE https://cse341apitodo.herokuapp.com/tasksSwagger/delete/62ad691fd56f7b889ffefc94
+
+
+// USER
+
+// LOCALHOST 
+### Get all Users
+GET http://localhost:3000/user/get-all
+
+### get user by id
+GET http://localhost:3000/user/get-single/62ad691fd56f7b889ffefc94
+
+
+### create user
+POST http://localhost:3000/user/ceate HTTP/1.1
+content-type: application/json
+
+{
+  "googleId": "111009140578123232112",
+  "displayName": "Test User",
+  "firstName": "Test",
+  "lastName": "User",
+  "image": "Dan",
+  "createdAt": "8/28/22"
+}
+
+### Put user (edit)
+PUT http://localhost:3000/user/edit/62ad691fd56f7b889ffefc94 HTTP/1.1
+content-type: application/json
+
+{
+  "googleId": "111009140578123232112",
+  "displayName": "Testing",
+  "firstName": "Test",
+  "lastName": "User",
+  "image": "Dan",
+  "createdAt": "8/28/22"
+}
+
+### Delete task
+DELETE http://localhost:3000/user/delete/62ad691fd56f7b889ffefc94
+
+// HEROKU
+### Get all Users
+GET https://cse341apitodo.herokuapp.com/user/get-all
+
+### get user by id
+GET https://cse341apitodo.herokuapp.com/get-single/62ad691fd56f7b889ffefc94
+
+
+### create user
+POST https://cse341apitodo.herokuapp.com/user/ceate HTTP/1.1
+content-type: application/json
+
+{
+  "googleId": "111009140578123232112",
+  "displayName": "Test User",
+  "firstName": "Test",
+  "lastName": "User",
+  "image": "Dan",
+  "createdAt": "8/28/22"
+}
+
+### Put user (edit)
+PUT https://cse341apitodo.herokuapp.com/user/edit/62ad691fd56f7b889ffefc94 HTTP/1.1
+content-type: application/json
+
+{
+  "googleId": "111009140578123232112",
+  "displayName": "Testing",
+  "firstName": "Test",
+  "lastName": "User",
+  "image": "Dan",
+  "createdAt": "8/28/22"
+}
+
+### Delete task
+DELETE https://cse341apitodo.herokuapp.com/user/delete/62ad691fd56f7b889ffefc94

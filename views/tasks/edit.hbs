@@ -1,0 +1,52 @@
+<h3>Edit Story</h3>
+<div class="row">
+  <form action="/tasks/{{task._id}}" method="POST" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="row">
+      <div class="input-field">
+        <h5>What is your Task to do:</h5>
+        <textarea id="task" name="task">{{task.task}}</textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="location" name="location" value="{{task.location}}"> 
+        <label for="location">Task Location</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="startTime" name="startTime"  value="{{task.startTime}}"> 
+        <label for="startTime">Start Time</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="startDate" name="startDate"  value="{{task.startDate}}"> 
+        <label for="startDate">Start Date</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="deadlineDate" name="deadlineDate" value="{{task.deadlineDate}}"> 
+        <label for="deadlineDate">Deadline Date</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="deadlineTime" name="deadlineTime" value="{{task.deadlineTime}}"> 
+        <label for="deadlineTime">Deadline Time</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Save" class="btn">
+      <a href="/dashboard" class="btn orange">Cancel</a>
+    </div>
+  </form>
+</div>

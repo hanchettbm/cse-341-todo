@@ -7,4 +7,12 @@ routes.get('/google/callback', passport.authenticate('google', {failureRedirect:
     res.redirect('/dashboard');
 });
 
+routes.get('/logout', (req, res, next) => {
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+      });
+    res.redirect('/');
+})
+
 module.exports = routes;

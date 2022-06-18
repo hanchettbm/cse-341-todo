@@ -4,7 +4,9 @@ routes.use('/', require('./swagger'));
 
 routes.use('/', require('./home'));
 
-routes.use('/tasks', require('./tasks'));
+routes.use('/tasks', require('./todotasks'));
+
+routes.use('/user', require('./user'));
 
 routes.use('/auth', require('./auth'));
 

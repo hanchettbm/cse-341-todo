@@ -22,14 +22,84 @@
       "get": {
         "description": "",
         "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
+        "responses": {}
+      }
+    },
+    "/dashboard": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/tasks/add": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
       }
     },
     "/tasks/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/tasks/edit/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/tasks/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/user/user/get-all": {
       "get": {
         "description": "",
         "produces": [
@@ -44,7 +114,33 @@
             "description": "Internal Server Error"
           }
         }
-      },
+      }
+    },
+    "/user/user/get-single/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/user/ceate": {
       "post": {
         "description": "",
         "parameters": [
@@ -54,25 +150,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "task": {
-                  "example": "any"
-                },
-                "location": {
-                  "example": "any"
-                },
-                "startTime": {
-                  "example": "any"
-                },
-                "startDate": {
-                  "example": "any"
-                },
-                "who": {
-                  "example": "any"
-                },
-                "deadlineDate": {
-                  "example": "any"
-                },
-                "deadlineTime": {
+                "user": {
                   "example": "any"
                 }
               }
@@ -89,29 +167,7 @@
         }
       }
     },
-    "/tasks/{id}": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
+    "/user/user/edit/{id}": {
       "put": {
         "description": "",
         "parameters": [
@@ -120,47 +176,22 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "task": {
-                  "example": "any"
-                },
-                "location": {
-                  "example": "any"
-                },
-                "startTime": {
-                  "example": "any"
-                },
-                "startDate": {
-                  "example": "any"
-                },
-                "who": {
-                  "example": "any"
-                },
-                "deadlineDate": {
-                  "example": "any"
-                },
-                "deadlineTime": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
           "204": {
             "description": "No Content"
           },
+          "404": {
+            "description": "Not Found"
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
-      },
+      }
+    },
+    "/user/user/delete/{id}": {
       "delete": {
         "description": "",
         "parameters": [
@@ -179,6 +210,27 @@
             "description": "Internal Server Error"
           }
         }
+      }
+    },
+    "/auth/google": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/auth/google/callback": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
       }
     }
   }

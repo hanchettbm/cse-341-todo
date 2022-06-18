@@ -1,0 +1,10 @@
+body { background: rgb(232, 244, 217)}
+p { 
+    margin: 10px !important;
+}
+
+.login-container { 
+    width: 500px;
+    margin-top: 50px;
+    text-align: center;
+}

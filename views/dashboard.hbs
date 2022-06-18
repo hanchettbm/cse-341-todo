@@ -1,17 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Dashboard</title>
-</head>
-<body>
-    <h1>DASHBOARD!</h1>
-    <div class="container">
-        {{{body}}}
-    </div>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
-</html>
+    <h1>DASHBOARD</h1>
+    <h3>Welcome {{name}}</h3>
+    <p>Here are your Tasks To Do:</p>
+
+    {{#if tasks}}
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Location</th>
+                    <th>Start Time</th>
+                    <th>Start Date</th>
+                    <th>DeadLine Date</th>
+                    <th>DeadLine Time</th>
+                    <th>Created At</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each tasks}}
+                    <tr>
+                        <td><a href="/tasks/{{_id}}"></a>{{task}}</td>
+                        <td>{{location}}</td>
+                        <td>{{startTime}}</td>
+                        <td>{{startDate}}</td>
+                        <td>{{deadlineDate}}</td>
+                        <td>{{deadlineTime}}</td>
+                        <td>{{createdAt}}</td>
+                        <td><a href="/tasks/edit/{{_id}}" class="btn-floating btn-large waves-effect waves-light">Edit<i class="fas fa-edit"></i></a></td>
+                         <td><form action="/tasks/{{_id}}" method="POST" id="delete-form"> 
+                             <input type="hidden" name="_method" value="DELETE">
+                             <button type="submit" class="btn btn-floating btn-large waves-effect waves-dark red">Del</button>
+                        </form></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p>You have not created any tasks to do</p>
+    {{/if}}

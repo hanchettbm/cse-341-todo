@@ -1,10 +1,10 @@
 const routes = require('express').Router();
 const {ensureAuth} = require('../middleware/auth');
-const Task = require('../controllers/tasks');
+const User = require('../controllers/user');
 
-routes.get('/tasksSwagger/get-all', ensureAuth, async (req, res) => {
+routes.get('/user/get-all', ensureAuth, async (req, res) => {
   try {
-  let results = await Task.getAll();
+  let results = await User.getAll();
   results.toArray().then((documents) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(documents);
@@ -17,9 +17,9 @@ routes.get('/tasksSwagger/get-all', ensureAuth, async (req, res) => {
   }
 });
 
-routes.get('/tasksSwagger/get-single/:id', ensureAuth, async (req, res) => {
+routes.get('/user/get-single/:id', ensureAuth, async (req, res) => {
     try {
-    let results = await Task.findOne({_id: req.params.id});
+    let results = await User.findOne({_id: req.params.id});
     results.toArray().then((documents) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(documents[0]);
@@ -32,10 +32,10 @@ routes.get('/tasksSwagger/get-single/:id', ensureAuth, async (req, res) => {
     }
   });
 
-routes.post('/tasksSwagger/ceate', ensureAuth, async (req, res) =>{ 
+routes.post('/user/ceate', ensureAuth, async (req, res) =>{ 
   try {
    req.body.user = req.user.id;
-   const response = await Task.create(req.body);
+   const response = await User.create(req.body);
    if (response.acknowledged) {
     res.status(201).json(response);
 } else {
@@ -47,27 +47,27 @@ routes.post('/tasksSwagger/ceate', ensureAuth, async (req, res) =>{
   }
 });
 
-routes.put('/tasksSwagger/edit/:id', ensureAuth, async (req, res) => {
+routes.put('/user/edit/:id', ensureAuth, async (req, res) => {
   try {
-    let task = await Task.findOne({
+    let user = await User.findOne({
       _id: req.params.id
     })
-    if(!task){
+    if(!user){
       res.status (404) .json(err);
       return res.render('error/404');
     }
 
-    if (task.modifiedCount > 0) {
+    if (user.modifiedCount > 0) {
         res.status(204).send();
       } else {
-        res.status(500).json(task.error || 'An error occurred: Can not update the User.');
+        res.status(500).json(user.error || 'An error occurred: Can not update the User.');
       }
 
-    if (task.user != req.user.id) {
+    if (user.user != req.user.id) {
       res.redirect('/dashboard');
       console.log("You do Not have permission to edit this User");
     } else {
-      task = await Task.findOneAndUpdate({_id: req.params.id}, req.body, {
+      user = await User.findOneAndUpdate({_id: req.params.id}, req.body, {
         new: true, 
         runValidators: true
       });
@@ -80,7 +80,7 @@ routes.put('/tasksSwagger/edit/:id', ensureAuth, async (req, res) => {
 
 });
 
-routes.delete('/tasksSwagger/delete/:id',  ensureAuth, async (req, res) =>{ 
+routes.delete('/user/delete/:id',  ensureAuth, async (req, res) =>{ 
   try {
      let results = await User.remove({_id: req.params.id});
      console.log(results);
