@@ -5,11 +5,8 @@ const Task = require('../controllers/tasks');
 routes.get('/tasksSwagger/get-all', ensureAuth, async (req, res) => {
   try {
   let results = await Task.findOne();
-  results.toArray().then((documents) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(documents);
+  console.log('results');
     console.log("Returned All Users");
-  });
   } catch (error) {
     console.error(error);
     res.status (500) .json(error);

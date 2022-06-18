@@ -5,11 +5,8 @@ const User = require('../controllers/user');
 routes.get('/user/get-all', ensureAuth, async (req, res) => {
   try {
   let results = await User.findOne();
-  results.toArray().then((documents) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(documents);
+    console.log('results');
     console.log("Returned All Users");
-  });
   } catch (error) {
     console.error(error);
     res.status (500) .json(error);
