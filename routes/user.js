@@ -4,7 +4,7 @@ const User = require('../controllers/user');
 
 routes.get('/user/get-all', ensureAuth, async (req, res) => {
   try {
-  let results = await User.getAll();
+  let results = await User.findOne();
   results.toArray().then((documents) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(documents);
@@ -12,7 +12,7 @@ routes.get('/user/get-all', ensureAuth, async (req, res) => {
   });
   } catch (error) {
     console.error(error);
-    res.status (500) .json(err);
+    res.status (500) .json(error);
     res.render('error/500');
   }
 });
@@ -27,7 +27,7 @@ routes.get('/user/get-single/:id', ensureAuth, async (req, res) => {
     });
     } catch (error) {
       console.error(error);
-      res.status (500) .json(err);
+      res.status (500) .json(error);
       res.render('error/500');
     }
   });
@@ -53,7 +53,6 @@ routes.put('/user/edit/:id', ensureAuth, async (req, res) => {
       _id: req.params.id
     })
     if(!user){
-      res.status (404) .json(err);
       return res.render('error/404');
     }
 
